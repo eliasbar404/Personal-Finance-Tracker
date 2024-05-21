@@ -1,9 +1,11 @@
 import express from "express";
 import mongoose from "mongoose"
 import cors from "cors";
+import path from "path";
 
 
 const app = express();
+const __dirname = path.resolve();
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
@@ -95,6 +97,11 @@ router.delete("/:id", async (req, res) => {
 
 
 app.use("/financial-records", router);
+
+app.use(express.static(path.join(__dirname, "/frontend")));
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "frontend", "index.html"));
+});
 
 
 app.listen(port, () => {
