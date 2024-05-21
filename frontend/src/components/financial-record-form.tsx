@@ -84,7 +84,7 @@ export const FinancialRecordForm = () => {
             <option value="Bank Transfer">Bank Transfer</option>
           </select>
         </div>
-        <button type="submit" className="button">
+        <button type="submit" className="button bg-blue-800">
           Add Record
         </button>
       </form>
