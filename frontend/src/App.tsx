@@ -1,18 +1,11 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { RouterProvider } from 'react-router-dom'
+import Router from './routes/Router.tsx'
 
 function App() {
   
   return (
     <div>
-          <header>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </header>
-      <h1 className="bg-red-500">Hello world</h1>
+      <RouterProvider router={Router} />
     </div>
   )
 }
