@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 //import Pages
 import Home from "../pages/Home.page";
 import Dashboard from "../pages/Dashboard.page";
+import { FinancialRecordsProvider } from "../contexts/financial-record-context";
 
 const Router = createBrowserRouter([
     {
@@ -10,7 +11,11 @@ const Router = createBrowserRouter([
     },
     {
       path: "/dashboard",
-      element: <Dashboard/>,
+      element: 
+      <FinancialRecordsProvider>
+        <Dashboard/>
+      </FinancialRecordsProvider>
+      ,
     },
   ]);
 
